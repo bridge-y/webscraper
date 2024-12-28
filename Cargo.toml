@@ -1,0 +1,24 @@
+[package]
+name = "webscraper"
+version = "0.1.0"
+edition = "2021"
+authors = [ "bridgey <bridgey4461@protonmail.ch>" ]
+
+[package.metadata.release]
+release = false
+
+# https://github.com/rustwasm/wasm-pack/issues/1247
+[package.metadata.wasm-pack.profile.release]
+wasm-opt = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+worker = { version="0.5.0" }
+worker-macros = { version="0.5.0" }
+console_error_panic_hook = { version = "0.1.1" }
+reqwest = "0.12.10"
+dom-content-extraction = "0.3.4"
+# https://users.rust-lang.org/t/use-of-undeclared-crate-or-module-imp-on-getrandom-0-2-3-when-building-for-wasm32-unknown-unknown/70171/5
+getrandom = { version = "0.2", features = ["js"] }
