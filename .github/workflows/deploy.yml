@@ -1,0 +1,23 @@
+on:
+  push:
+    branches:
+      - main
+  repository_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      SCCACHE_CACHE_SIZE: 1G
+    steps:
+      - uses: actions/checkout@v4
+      - name: rust sccache
+        uses: mozilla-actions/sccache-action@v0.0.7
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+      - name: Build & Deploy Worker
+        uses: cloudflare/wrangler-action@v3.13.0
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
