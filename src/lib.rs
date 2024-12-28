@@ -1,7 +1,13 @@
 use dom_content_extraction::scraper::Html;
-use dom_content_extraction::{get_node_text, scraper, DensityTree};
+use dom_content_extraction::DensityTree;
+use serde::Serialize;
 use std::collections::HashMap;
 use worker::*;
+
+#[derive(Serialize, Debug)]
+struct Payload {
+    text: String,
+}
 
 // extract query parameters from the URL
 fn get_query_params(url: Url) -> Result<HashMap<String, String>> {
@@ -30,5 +36,9 @@ async fn fetch(req: Request, _env: Env, _ctx: Context) -> Result<Response> {
     let _ = dtree.calculate_density_sum();
     let extracted_content = dtree.extract_content(&document).unwrap();
 
-    Response::ok(extracted_content)
+    let payload = Payload {
+        text: extracted_content,
+    };
+
+    Response::from_json(&payload)
 }
