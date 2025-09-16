@@ -22,4 +22,4 @@ reqwest = "0.12.15"
 dom-content-extraction = "0.3.8"
 # https://users.rust-lang.org/t/use-of-undeclared-crate-or-module-imp-on-getrandom-0-2-3-when-building-for-wasm32-unknown-unknown/70171/5
 getrandom = { version = "0.2", features = ["js"] }
-serde = { version = "1.0.219", features = ["derive"] }
+serde = { version = "1.0.225", features = ["derive"] }
