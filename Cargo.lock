@@ -1877,7 +1877,7 @@ dependencies = [
  "reqwest",
  "serde",
  "worker",
- "worker-macros 0.6.6",
+ "worker-macros 0.7.0",
 ]
 
 [[package]]
@@ -2141,9 +2141,9 @@ dependencies = [
 
 [[package]]
 name = "worker-macros"
-version = "0.6.6"
+version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a9b87ff3abcd9e21f0c2de1b6ad145b535bc4e1761d46fa27e6dcd549e145f06"
+checksum = "f6d57d9439ad92355f1e561bbbb33abf403125850c9b25ea6be4371b8bebcd4e"
 dependencies = [
  "async-trait",
  "proc-macro2",
@@ -2152,7 +2152,7 @@ dependencies = [
  "wasm-bindgen",
  "wasm-bindgen-futures",
  "wasm-bindgen-macro-support",
- "worker-sys 0.6.6",
+ "worker-sys 0.7.0",
 ]
 
 [[package]]
@@ -2169,9 +2169,9 @@ dependencies = [
 
 [[package]]
 name = "worker-sys"
-version = "0.6.6"
+version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c4b5b178b64415a5992165f5c17f9632e458bf7f6461839f885bfc6d7b685e2f"
+checksum = "d5abe9e356c630837d9dd7ee465946f809368b110672fdf1334ff64f89290981"
 dependencies = [
  "cfg-if",
  "js-sys",
