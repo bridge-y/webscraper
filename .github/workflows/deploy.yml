@@ -12,11 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: rust sccache
-        uses: mozilla-actions/sccache-action@v0.0.7
+        uses: mozilla-actions/sccache-action@v0.0.9
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
       - name: Build & Deploy Worker
-        uses: cloudflare/wrangler-action@v3.13.0
+        uses: cloudflare/wrangler-action@v3.14.1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
