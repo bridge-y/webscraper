@@ -18,7 +18,7 @@ crate-type = ["cdylib"]
 worker = { version="0.7.1" }
 worker-macros = { version="0.7.2" }
 console_error_panic_hook = { version = "0.1.1" }
-reqwest = "0.12.24"
+reqwest = "0.13.1"
 dom-content-extraction = "0.3.15"
 # https://users.rust-lang.org/t/use-of-undeclared-crate-or-module-imp-on-getrandom-0-2-3-when-building-for-wasm32-unknown-unknown/70171/5
 getrandom = { version = "0.2", features = ["js"] }
